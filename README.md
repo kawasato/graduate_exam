@@ -2,7 +2,9 @@
 # パン屋訪問記録アプリ「Pantastic」
 
 ## 概要
-行ったことのあるパン屋さんの記録管理に、また他のユーザーの投稿から次に行きたいパン屋さんの候補探しに使っていただけます。
+行ったことのあるパン屋さんの記録管理に、  
+また他のユーザーの投稿から次に行きたいパン屋さんの候補探しに  
+使っていただけます。
 
 ## コンセプト
 パン屋巡りの便利ツール。  
@@ -28,8 +30,8 @@ ruby 2.3.0  Rails 5.1.6
 + お気に入り一覧機能
 + ユーザー編集機能
 
-## カタログ設計
-<https://docs.google.com/spreadsheets/d/1XdQoNy-l1Atvw3cvRCkYI6OLN-T8Zvw5CP5sSX12pTQ/edit#gid=1481753852>
+## カタログ設計書
+<https://docs.google.com/spreadsheets/d/1ZujsuF4RPc45vDG3civyzBV_w2M9pNYqM30iXv5jpEg/edit#gid=131287791>
 ## テーブル定義書
 <https://docs.google.com/spreadsheets/d/1XdQoNy-l1Atvw3cvRCkYI6OLN-T8Zvw5CP5sSX12pTQ/edit#gid=804905629>
 ## 画面遷移図
