@@ -1,9 +1,8 @@
 # README
-# パン屋訪問記録アプリ「Pantastic!」
+# パン屋訪問記録アプリ「Pantastic」
 
 ## 概要
-行ったことのあるパン屋さんの記録管理に!  
-他のユーザーの投稿から次に行くパン屋さんの候補探しに使っていただけます。
+行ったことのあるパン屋さんの記録管理に、また他のユーザーの投稿から次に行きたいパン屋さんの候補探しに使っていただけます。
 
 ## コンセプト
 パン屋巡りの便利ツール。  
@@ -31,12 +30,14 @@ ruby 2.3.0  Rails 5.1.6
 
 ## カタログ設計
 <https://docs.google.com/spreadsheets/d/1XdQoNy-l1Atvw3cvRCkYI6OLN-T8Zvw5CP5sSX12pTQ/edit#gid=1481753852>
+## テーブル定義書
+<https://docs.google.com/spreadsheets/d/1XdQoNy-l1Atvw3cvRCkYI6OLN-T8Zvw5CP5sSX12pTQ/edit#gid=804905629>
 ## 画面遷移図
 <https://docs.google.com/spreadsheets/d/1fzFVigL02atNs0VbINplVSRsrX-5d7F46vetF_Jzibk/edit#gid=0>
 ## 画面ワイヤーフレーム
 <https://docs.google.com/spreadsheets/d/1_-3wj3tvLiwXXFebU6W7yY3Flh8ejmg_QvfIgHBIpsI/edit#gid=0>
 ## 使用予定Gem
-+  device
++  device
 +  kaminari
 +  ransack
 
