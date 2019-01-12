@@ -9,13 +9,18 @@
   </head>
 
   <body>
-    <% if user_signed_in? %>
-      <%= link_to "ブログ投稿", shops_path %>
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "新規登録", new_user_registration_path %>
-      <%= link_to "ログイン", new_user_session_path %>
-    <% end %>
+  <header class="header">
+      <div class="container">
+        <ul class="row">
+            <li class="col-sm-2 col-md-2"><%= link_to "TOP", root_path %></li>
+          <% if user_signed_in? %>
+            <li class="col-sm-2 col-md-2"><%= link_to "ブログ投稿", shops_path %></li>
+            <li class="col-sm-2 col-md-2"><%= link_to "アカウント管理", user_path(current_user.id) %></li>          
+            <li class="col-sm-2 col-md-2"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+          <% else %>
+            <li class="col-sm-2 col-md-2"><%= link_to "新規登録", new_user_registration_path %></li>
+            <li class="col-sm-2 col-md-2"><%= link_to "ログイン", new_user_session_path %></li>
+          <% end %>
 
     <% if notice %>
       <p class="alert alert-notice"><%= notice %></p>
