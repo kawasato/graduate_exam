@@ -9,7 +9,7 @@
   </head>
 
   <body>
-  <header class="header">
+    <header class="header">
       <div class="container">
         <ul class="row">
             <li class="col-sm-2 col-md-2"><%= link_to "TOP", root_path %></li>
@@ -21,13 +21,17 @@
             <li class="col-sm-2 col-md-2"><%= link_to "新規登録", new_user_registration_path %></li>
             <li class="col-sm-2 col-md-2"><%= link_to "ログイン", new_user_session_path %></li>
           <% end %>
-
-    <% if notice %>
-      <p class="alert alert-notice"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert alert-error"><%= alert %></p>
-    <% end %>
+          </ul>
+      </div>
+    </header>
+    <div>
+      <% if notice %>
+        <p class="alert alert-notice"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert alert-error"><%= alert %></p>
+      <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>

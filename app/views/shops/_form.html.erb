@@ -1,0 +1,58 @@
+<%= form_with(model: @shop, local: true ) do |form| %>
+    <% if @shop.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= @shop.errors.count %>件のエラーがあります。</h2>
+        <ul><% @shop.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <div class="shop_title">
+    <%= form.label :shop_name %>
+    <%= form.text_field :shop_name %>
+
+    <%= form.label :address %>
+    <%= form.text_field :address %>
+
+    <%= form.label :visitdate %>
+    <%= form.text_field :visitdate %>
+    </div>
+    
+    <div class="shop_image">
+      <%= form.label :shop_image %>
+      <%= image_tag(@shop.shop_image) if @shop.shop_image.present? %>
+      <%= form.file_field :shop_image %>
+      <%= form.hidden_field :shop_image_cache %>
+    </div>
+    <div class="bread_image">
+      <%= form.label :bread_image1 %>
+      <%= image_tag(@shop.bread_image1) if @shop.bread_image1.present? %>
+      <%= form.file_field :bread_image1 %>
+      <%= form.hidden_field :bread_image1_cache %>
+
+      <%= form.label :bread_name1 %>
+      <%= form.text_field :bread_name1 %>
+
+      <%= form.label :bread_image2 %>
+      <%= image_tag(@shop.bread_image2) if @shop.bread_image2.present? %>
+      <%= form.file_field :bread_image2 %>
+      <%= form.hidden_field :bread_image2_cache %>
+
+      <%= form.label :bread_name2 %>
+      <%= form.text_field :bread_name2 %>
+
+      <%= form.label :bread_image3 %>
+      <%= image_tag(@shop.bread_image3) if @shop.bread_image3.present? %>
+      <%= form.file_field :bread_image3 %>
+      <%= form.hidden_field :bread_image3_cache %>
+
+      <%= form.label :bread_name3 %>
+      <%= form.text_field :bread_name3 %>
+
+    </div>
+    <%= form.submit %>
+  <% end %>
+  
+  <%= link_to "一覧画面にもどる", shops_path %>
