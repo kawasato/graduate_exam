@@ -59,7 +59,7 @@ class ShopsController < ApplicationController
     private
 
     def blog_params
-        params.require(:shop).permit(:title, :content,:blog_image,:blog_image_cache)
+        params.require(:shop).permit(:title, :content,:shop_image,:shop_image_cache,:bread_image1,:bread_image1_cache,:bread_image2,:bread_image2_cache,:bread_image3,:bread_image3_cache)
     end
 
     def set_blog

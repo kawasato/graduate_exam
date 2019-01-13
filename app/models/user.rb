@@ -5,5 +5,7 @@ class User < ApplicationRecord
   has_many :shops
   has_many :favorites, dependent: :destroy
   has_many :favorite_shops ,through: :favorites,source: :shop
+  mount_uploader :user_image,UserImageUploader
   validates :name, presence: true, length: { maximum: 30 }
+  validates :user_image, presence: true
 end

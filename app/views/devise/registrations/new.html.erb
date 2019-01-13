@@ -4,6 +4,10 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+    <%= f.label :user_image %><br />
+    <%= f.file_field :user_image %>
+  </div>
+  <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
