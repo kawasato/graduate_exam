@@ -1,0 +1,54 @@
+<h3>以下の内容で、送信する。</h3>
+
+<%= form_with(model: @shop, url: shops_path, local: true) do |form| %>
+    <%= form.hidden_field:shop_image_cache %>
+    <%= form.hidden_field:bread_image1_cache %>
+    <%= form.hidden_field:bread_image2_cache %>
+    <%= form.hidden_field:bread_image3_cache %>
+    <%= form.hidden_field:shop_name %>
+    <%= form.hidden_field:address %>
+    <%= form.hidden_field:visitdate %>
+    <%= form.hidden_field:bread_name1 %>
+    <%= form.hidden_field:bread_name2 %>
+    <%= form.hidden_field:bread_name3 %>
+
+  <p>お店の名前:<%= @shop.shop_name %></p>
+  <p>場所:<%= @shop.address %></p>
+  <p>訪問した日:<%= @shop.visitdate %></p>
+  <div class= "content_image">
+    <p>外観写真：<% if @shop.shop_image.url.present? %>
+    <%= image_tag(@shop.shop_image.url) %>
+    <% end %>
+    </p>
+    <p>買ったパン１位:<%= shop.bread_name1 %></p>
+    <% if @shop.bread_image1.url.present? %>
+    <%= image_tag(@shop.bread_image1.url) %>
+    <% end %>
+
+    <p>買ったパン2位:<%= shop.bread_image2 %></p>
+    <% if @shop.bread_image2.url.present? %>
+    <%= image_tag(@shop.bread_image2.url) %>
+    <% end %>
+
+    <p>買ったパン3位:<%= shop.bread_image3 %></p>
+    <% if @shop.bread_image3.url.present? %>
+    <%= image_tag(@shop.bread_image3.url) %>
+    <% end %>
+  </div> 
+  <%= form.submit  "登録する" %>
+<% end %>
+
+
+<%= form_with(model: @shop, url: new_shop_path, local: true, method: 'get') do |form| %>
+    <%= form.hidden_field:shop_image_cache %>
+    <%= form.hidden_field:bread_image1_cache %>
+    <%= form.hidden_field:bread_image2_cache %>
+    <%= form.hidden_field:bread_image3_cache %>
+    <%= form.hidden_field:shop_name %>
+    <%= form.hidden_field:address %>
+    <%= form.hidden_field:visitdate %>
+    <%= form.hidden_field:bread_name1 %>
+    <%= form.hidden_field:bread_name2 %>
+    <%= form.hidden_field:bread_name3 %>
+    <%= form.submit "もどる", name: 'back' %>
+<% end %>

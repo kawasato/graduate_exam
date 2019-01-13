@@ -18,7 +18,6 @@ class ShopsController < ApplicationController
         @shop = Shop.new(blog_params)
         @shop.user_id = current_user.id
         if @shop.save
-            BlogMailer.blog_mail(@shop).deliver
             redirect_to shops_path,notice:" 新規投稿しました！"
         else
             render'new'
@@ -26,7 +25,7 @@ class ShopsController < ApplicationController
     end
 
     def show
-        @favorite = current_user.favorites.find_by(blog_id: @shop.id)
+        @favorite = current_user.favorites.find_by(shop_id: @shop.id)
     end
 
     def edit
