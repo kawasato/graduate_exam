@@ -4,9 +4,17 @@ ja:
       shop: "投稿"
       user: "ユーザー"
     attributes:
-      blog:
-        title: "タイトル"
-        content: "内容"
+      shop:
+        shop_name: "お店の名前"
+        address: "場所"
+        visitdate: "訪問した日"
+        shop_image: "お店の外観"
+        bread_name1: "パンの名前"
+        bread_name2: "パンの名前"
+        bread_name3: "パンの名前"
+        bread_image1: "パンの写真1"
+        bread_image2: "パンの写真2"
+        bread_image3: "パンの写真3"
       contact:
         name: "名前"
         email: "メールアドレス"
