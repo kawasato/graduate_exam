@@ -1,7 +1,7 @@
 class Shop < ApplicationRecord
-    validates :visitdate,
-    presence: true,
-    numericality: { only_integer: true, greater_than: 1990, less_than: 3000 }
+    validates :shop_name,presence: true
+    validates :address,presence: true
+    validates :visitdate,presence: true
     belongs_to :user
     has_many :favorites, dependent: :destroy
     has_many :favorite_users, through: :favorites, source: :user

@@ -2,8 +2,10 @@ class ShopsController < ApplicationController
     before_action :set_blog, only: [:show, :edit, :update, :destroy]
     #before_action :require_login, only:[:edit, :destroy, :show, :new, :index]
     before_action :authenticate_user!, only: [:new, :edit, :update, :destroy,:index]
+
     def index
-        @shops = Shop.all
+        @search = Shop.ransack(params[:q]) #ransackメソッド推奨
+        @shops = @search.result #.page(params[:page]) #ページネーションのメソッド    
     end
 
     def new
