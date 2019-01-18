@@ -2,10 +2,11 @@ class ShopsController < ApplicationController
     before_action :set_blog, only: [:show, :edit, :update, :destroy]
     #before_action :require_login, only:[:edit, :destroy, :show, :new, :index]
     before_action :authenticate_user!, only: [:new, :edit, :update, :destroy,:index]
-
+    PER = 8
+    
     def index
         @search = Shop.ransack(params[:q]) #ransackメソッド推奨
-        @shops = @search.result #.page(params[:page]) #ページネーションのメソッド    
+        @shops = @search.result.page(params[:page]).per(PER) #ページネーションのメソッド    
     end
 
     def new

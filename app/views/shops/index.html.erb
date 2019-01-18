@@ -54,7 +54,8 @@
     <div class="btn btn-xs">
         <h2 id="btn"><%= link_to'新しく訪問記録を投稿する',new_shop_path %></h2>
     </div>
+    <%= paginate @shops %>
     <div>
-        <a href="/tops">トップぺージへ</a>
+        <a href="/">トップぺージへ</a>
     </div>
 </div>
