@@ -1,3 +1,15 @@
-// Place all the styles related to the tops controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.main_page {
+    background: image-url('DSC_0102.jpg');
+    background: radial-gradient(ellipse at center, rgba(255,255,255,0) 40%,rgba(255,255,255,0.5) 60%,rgba(255,255,255,1) 100%),url(DSC_0102.jpg);
+    background-size: cover;
+}
+
+#top_comment {
+    color: whitesmoke;
+    margin-top: 10%;
+}
+
+#comment {
+    color:whitesmoke;
+    margin-top: 20%;
+}

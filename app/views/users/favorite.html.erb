@@ -1,30 +1,33 @@
 <h2>お気に入りのお店</h2>
-<% @user.favorite_shops.each do |shop| %>
-    <div class="col-xs-12 col-md-6 shop-panel">
-    <h3>お店の名前:<%= shop.shop_name %></h3>
-    <p>場所:<%= shop.address %></p>
-    <p>訪問した日:<%= shop.visitdate %></p>
-  <div class= "content_image">
-    <p>外観写真：<% if shop.shop_image.url.present? %>
-    <%= image_tag(shop.shop_image.url) %>
-    <% end %>
-    </p>
-    <p>買ったパン１位:<%= shop.bread_name1 %></p>
-    <% if shop.bread_image1.url.present? %>
-    <%= image_tag(shop.bread_image1.url) %>
-    <% end %>
+<div class = "row">
+    <% @user.favorite_shops.each do |shop| %>
+        <div class="col-xs-12 col-md-6 shop-panel">
+            <h3>お店の名前:<%= shop.shop_name %></h3>
+            <p>場所:<%= shop.address %></p>
+            <p>訪問した日:<%= shop.visitdate %></p>
+            <div class= "content_image">
+                <p>外観写真：<% if shop.shop_image.url.present? %>
+                <%= image_tag(shop.shop_image.url) %>
+                <% end %>
+                </p>
+                <p>買ったパン１位:<%= shop.bread_name1 %></p>
+                <% if shop.bread_image1.url.present? %>
+                <%= image_tag(shop.bread_image1.url) %>
+                <% end %>
 
-    <p>買ったパン2位:<%= shop.bread_image2 %></p>
-    <% if shop.bread_image2.url.present? %>
-    <%= image_tag(shop.bread_image2.url) %>
-    <% end %>
+                <p>買ったパン2位:<%= shop.bread_image2 %></p>
+                <% if shop.bread_image2.url.present? %>
+                <%= image_tag(shop.bread_image2.url) %>
+                <% end %>
 
-    <p>買ったパン3位:<%= shop.bread_image3 %></p>
-    <% if shop.bread_image3.url.present? %>
-    <%= image_tag(shop.bread_image3.url) %>
+                <p>買ったパン3位:<%= shop.bread_image3 %></p>
+                <% if shop.bread_image3.url.present? %>
+                <%= image_tag(shop.bread_image3.url) %>
+                <% end %>
+                <div class="blog-links">
+                    <%= link_to'詳細を確認する',shop_path(shop.id) %>
+                </div>
+            </div>
+        </div>
     <% end %>
-    <div class="blog-links">
-        <%= link_to'詳細を確認する',shop_path(shop.id) %>
-    </div>
-    </div>
-<% end %>
+</div>
