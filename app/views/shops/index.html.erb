@@ -1,3 +1,7 @@
+<div class="btn btn-xs">
+        <h2 id="btn"><%= link_to'新規作成',new_shop_path %></h2>
+</div>
+
 <h1>投稿一覧</h1>
 <p><%= notice %></p> 
 
@@ -7,6 +11,7 @@
     <dd><%= f.submit ("検索") , class: 'search-btn'%></dd>
   <% end %>
 </dl>
+
 
 <div class="row">
     <% @shops.each do |shop| %>
@@ -39,8 +44,8 @@
         <%= image_tag shop.bread_image3.url %>
         <% end %>
             </p>
-            <div class="shop-links">
-                <% if shop.user_id == current_user.id %> 
+            <div class="shop-links"> 
+                <% if shop.user_id == current_user.id %>
                     <%= link_to'詳細を確認する',shop_path(shop.id), class: "shop-links2" %>
                     <%= link_to "ブログ編集", edit_shop_path(shop.id), class: "shop-links2" %>
                     <%= link_to 'ブログ削除', shop_path(shop.id), class: "shop-links2", method: :delete,data: { confirm: '本当に削除してもいいですか？' } %>
@@ -52,10 +57,9 @@
     <% end %>
     </div>
     <div class="btn btn-xs">
-        <h2 id="btn"><%= link_to'新しく訪問記録を投稿する',new_shop_path %></h2>
+        <h2 id="btn"><%= link_to'新規作成',new_shop_path %></h2>
     </div>
-    <%= paginate @shops %>
     <div>
-        <a href="/">トップぺージへ</a>
+    <%= paginate @shops %>
     </div>
 </div>

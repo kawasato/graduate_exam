@@ -4,13 +4,12 @@ html{
     text-align: center;
 }
 
-
 li{
     list-style: none;
     margin-top: 20px;
     text-align: left;
 }
-body {
+body{
     height: 100%;
  }
 
@@ -21,7 +20,7 @@ body {
     text-align: center;
 }
 
-.shop-links {
+.shop-links2 {
     display: inline-block;
     max-width: 180px;
     text-align: left;
@@ -44,7 +43,7 @@ body {
     border-radius: 4px;
     box-shadow: 0px 0px 0px 5px #668ad8;
     border: dashed 1px #FFF;
-    margin: 100px;
+    margin: 10px;
 }
 
 #btn :hover{
@@ -56,6 +55,27 @@ body {
     color:white;
 }
 
+table.newpost{
+    margin:0 auto;
+}
+
+.content_image {
+    margin: 10px;
+    padding-bottom: 10px;
+}
+
+.confirmbtn {
+    padding-bottom: 80px;
+}
+
+nav.pagination {
+    padding-bottom: 100px;
+}
+
+.sendbtn {
+    margin-bottom: 200px;
+}
+
 footer {
     width: 100%;
     background-color:lightsteelblue;
@@ -63,7 +83,7 @@ footer {
     color: white;
     margin: auto;
     padding-bottom: 10px;
-    font-size: 12px;
+    font-size: 12px; 
     position: absolute;
     bottom: 0;
 }

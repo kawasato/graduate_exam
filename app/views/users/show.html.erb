@@ -7,5 +7,5 @@
     <%= image_tag @user.user_image.url %>
 </p>
 <% end %>
-<%= link_to'編集する',edit_user_registration_path(@user.id) %>
-<%= link_to'お気に入りブログ一覧',favorite_user_path(@user.id) %>
+<%= link_to'編集する',edit_user_registration_path(@user.id), class: "user-links" %>
+<%= link_to'お気に入りブログ一覧',favorite_user_path(@user.id), class: "user-links" %>
