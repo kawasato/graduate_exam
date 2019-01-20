@@ -1,6 +1,6 @@
 <h1>詳細画面</h1>
 <p class = "shop_image">
-    <strong>外観:</strong>
+    <strong>外観</strong>
 </p>
 <% if @shop.shop_image.url.present? %>
     <%= image_tag @shop.shop_image.url %>
@@ -13,12 +13,12 @@
         <%= image_tag(@shop.bread_image1.url) %>
     <% end %>
 
-<p>買ったパン2位:<%= @shop.bread_image2 %></p>
+<p>買ったパン2位:<%= @shop.bread_name2 %></p>
     <% if @shop.bread_image2.url.present? %>
         <%= image_tag(@shop.bread_image2.url) %>
     <% end %>
 
-<p>買ったパン3位:<%= @shop.bread_image3 %></p>
+<p>買ったパン3位:<%= @shop.bread_name3 %></p>
     <% if @shop.bread_image3.url.present? %>
         <%= image_tag(@shop.bread_image3.url) %>
     <% end %>

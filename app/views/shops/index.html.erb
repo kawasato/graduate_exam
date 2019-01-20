@@ -22,25 +22,25 @@
         <p>訪問した日：<%= shop.visitdate %></p>
         <% if shop.shop_image.url.present? %>
             <p class = "shop_image">
-            <strong>外観写真:</strong>
+            <strong>外観写真</strong></br>
             <%= image_tag shop.shop_image.url %>
             </p>
         <% end %>
         <% if shop.bread_image1.url.present? %>
             <p class = "bread_image">
-            <strong>買ったパン1位:<%= shop.bread_name1 %></strong>
+            <strong>買ったパン1位:<%= shop.bread_name1 %></strong></br>
             <%= image_tag shop.bread_image1.url %>
             </p>
         <% end %>
         <% if shop.bread_image2.url.present? %>
             <p class = "bread_image">
-            <strong>買ったパン2位:<%= shop.bread_name2 %></strong>
+            <strong>買ったパン2位:<%= shop.bread_name2 %></strong></br>
             <%= image_tag shop.bread_image2.url %>
             </p>
         <% end %>
         <% if shop.bread_image3.url.present? %>
             <p class = "bread_image">
-            <strong>買ったパン3位:<%= shop.bread_name3 %></strong>
+            <strong>買ったパン3位:<%= shop.bread_name3 %></strong></br>
             <%= image_tag shop.bread_image3.url %>
         <% end %>
             </p>
