@@ -1,6 +1,5 @@
 class ShopsController < ApplicationController
     before_action :set_blog, only: [:show, :edit, :update, :destroy]
-    #before_action :require_login, only:[:edit, :destroy, :show, :new, :index]
     before_action :authenticate_user!, only: [:new, :edit, :update, :destroy,:index]
     PER = 8
     
@@ -71,9 +70,4 @@ class ShopsController < ApplicationController
         @shop = Shop.find(params[:id])
     end 
 
-    #def require_login
-        #unless logged_in?
-           # redirect_to new_session_path,notice:"ログインしてください"
-       # end
-    #end
 end

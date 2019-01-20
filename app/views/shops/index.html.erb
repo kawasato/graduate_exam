@@ -39,9 +39,9 @@
             </p>
         <% end %>
         <% if shop.bread_image3.url.present? %>
-        <p class = "bread_image">
-        <strong>買ったパン3位:<%= shop.bread_name3 %></strong>
-        <%= image_tag shop.bread_image3.url %>
+            <p class = "bread_image">
+            <strong>買ったパン3位:<%= shop.bread_name3 %></strong>
+            <%= image_tag shop.bread_image3.url %>
         <% end %>
             </p>
             <div class="shop-links"> 
@@ -56,10 +56,10 @@
         </div>
     <% end %>
     </div>
+    <div>
+        <%= paginate @shops %>
+    </div>
     <div class="btn btn-xs">
         <h2 id="btn"><%= link_to'新規作成',new_shop_path %></h2>
-    </div>
-    <div>
-    <%= paginate @shops %>
     </div>
 </div>
