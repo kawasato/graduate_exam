@@ -1,32 +1,32 @@
 <h1>詳細画面</h1>
 <p class = "shop_image">
-    <strong>外観</strong>
+  <strong>外観</strong>
 </p>
 <% if @shop.shop_image.url.present? %>
-    <%= image_tag @shop.shop_image.url %>
+  <%= image_tag @shop.shop_image.url %>
 <% end %>
 <h3>お店の名前:<%= @shop.shop_name %></h3>
 <p>場所:<%= @shop.address %></p>
 <p>訪問した日:<%= @shop.visitdate %></p>
 <p>買ったパン１位:<%= @shop.bread_name1 %></p>
-    <% if @shop.bread_image1.url.present? %>
-        <%= image_tag(@shop.bread_image1.url) %>
-    <% end %>
+  <% if @shop.bread_image1.url.present? %>
+    <%= image_tag(@shop.bread_image1.url) %>
+  <% end %>
 
 <p>買ったパン2位:<%= @shop.bread_name2 %></p>
-    <% if @shop.bread_image2.url.present? %>
-        <%= image_tag(@shop.bread_image2.url) %>
-    <% end %>
+  <% if @shop.bread_image2.url.present? %>
+    <%= image_tag(@shop.bread_image2.url) %>
+  <% end %>
 
 <p>買ったパン3位:<%= @shop.bread_name3 %></p>
-    <% if @shop.bread_image3.url.present? %>
-        <%= image_tag(@shop.bread_image3.url) %>
-    <% end %>
+  <% if @shop.bread_image3.url.present? %>
+    <%= image_tag(@shop.bread_image3.url) %>
+  <% end %>
 
 <% unless @shop.user_id == current_user.id %>
-    <% if @favorite.present? %>
-        <%= link_to'お気に入り解除する', favorite_path(id: @favorite.id),method: :delete, class:'btn btn-danger' %>
-    <% else %>
-        <%= link_to'お気に入りする', favorites_path(shop_id: @shop.id), method: :post,class:'btn btn-primary' %>
-    <% end %>
+  <% if @favorite.present? %>
+    <%= link_to'お気に入り解除する', favorite_path(id: @favorite.id),method: :delete, class:'btn btn-danger' %>
+  <% else %>
+    <%= link_to'お気に入りする', favorites_path(shop_id: @shop.id), method: :post,class:'btn btn-primary' %>
+  <% end %>
 <% end %>

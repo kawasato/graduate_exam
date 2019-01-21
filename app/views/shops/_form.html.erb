@@ -10,54 +10,54 @@
     <% end %>
     <table class = "newpost">
       <tr>
-      <td><%= form.label :shop_name %></td>
-      <td><%= form.text_field :shop_name %></td>
+        <td><%= form.label :shop_name %></td>
+        <td><%= form.text_field :shop_name %></td>
       </tr>
       <tr>
-      <td><%= form.label :address %></td>
-      <td><%= form.text_field :address %></td>
+        <td><%= form.label :address %></td>
+        <td><%= form.text_field :address %></td>
       </tr>
       <tr>
-      <td><%= form.label :visitdate %></td>
-      <td><%= form.date_field :visitdate %></td>
+        <td><%= form.label :visitdate %></td>
+        <td><%= form.date_field :visitdate %></td>
       <tr>
-      <td><%= form.label :shop_image %></td>
-      <td><%= image_tag(@shop.shop_image) if @shop.shop_image.present? %>
+        <td><%= form.label :shop_image %></td>
+        <td><%= image_tag(@shop.shop_image) if @shop.shop_image.present? %>
         <%= form.file_field :shop_image %></td>
         <%= form.hidden_field :shop_image_cache %>
       </tr>
       <tr>
-      <td><%= form.label :bread_image1 %></td>
-      <td><%= image_tag(@shop.bread_image1) if @shop.bread_image1.present? %>
+        <td><%= form.label :bread_image1 %></td>
+        <td><%= image_tag(@shop.bread_image1) if @shop.bread_image1.present? %>
         <%= form.file_field :bread_image1 %></td>
         <%= form.hidden_field :bread_image1_cache %>
       </tr>
       <tr>
-      <td><%= form.label :bread_name1 %></td>
-      <td><%= form.text_field :bread_name1 %></td>
+        <td><%= form.label :bread_name1 %></td>
+        <td><%= form.text_field :bread_name1 %></td>
       </tr>
       <tr>
-      <td><%= form.label :bread_image2 %></td>
-      <td><%= image_tag(@shop.bread_image2) if @shop.bread_image2.present? %>
+        <td><%= form.label :bread_image2 %></td>
+        <td><%= image_tag(@shop.bread_image2) if @shop.bread_image2.present? %>
         <%= form.file_field :bread_image2 %></td>
         <%= form.hidden_field :bread_image2_cache %>
       </tr>
       <tr>
-      <td><%= form.label :bread_name2 %></td>
-      <td><%= form.text_field :bread_name2 %></td>
+        <td><%= form.label :bread_name2 %></td>
+        <td><%= form.text_field :bread_name2 %></td>
       </tr>
       <tr>
-      <td><%= form.label :bread_image3 %></td>
-      <td><%= image_tag(@shop.bread_image3) if @shop.bread_image3.present? %>
+        <td><%= form.label :bread_image3 %></td>
+        <td><%= image_tag(@shop.bread_image3) if @shop.bread_image3.present? %>
         <%= form.file_field :bread_image3 %></td>
         <%= form.hidden_field :bread_image3_cache %>
       </tr>
       <tr>
-      <td><%= form.label :bread_name3 %></td>
-      <td><%= form.text_field :bread_name3 %></td>
+        <td><%= form.label :bread_name3 %></td>
+        <td><%= form.text_field :bread_name3 %></td>
       </tr>
       </table>
       <%= form.submit'投稿する', class: "sendbtn" %>
-  <% end %>
+<% end %>
   
-  <%= link_to "一覧画面にもどる", shops_path %>
+<%= link_to "一覧画面にもどる", shops_path %>

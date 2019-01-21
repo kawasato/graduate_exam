@@ -1,2 +1,1 @@
-module TopsHelper
-end
+module TopsHelper; end

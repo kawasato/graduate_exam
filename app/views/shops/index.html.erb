@@ -1,5 +1,5 @@
 <div class="btn btn-xs">
-        <h2 id="btn"><%= link_to'新規作成',new_shop_path %></h2>
+  <h2 id="btn"><%= link_to'新規作成',new_shop_path %></h2>
 </div>
 
 <h1>投稿一覧</h1>
@@ -14,52 +14,51 @@
 
 
 <div class="row">
-    <% @shops.each do |shop| %>
-        <div class="col-xs-12 col-md-6 shop-panel">
-        <h2>お店の名前：<%= shop.shop_name %></h2>
-        <p>場所：<%= shop.address %></p>
-        <p>投稿者：<%= shop.user.name %></p>
-        <p>訪問した日：<%= shop.visitdate %></p>
-        <% if shop.shop_image.url.present? %>
-            <p class = "shop_image">
-            <strong>外観写真</strong></br>
-            <%= image_tag shop.shop_image.url %>
-            </p>
+  <% @shops.each do |shop| %>
+    <div class="col-xs-12 col-md-6 shop-panel">
+      <h2>お店の名前：<%= shop.shop_name %></h2>
+      <p>場所：<%= shop.address %></p>
+      <p>投稿者：<%= shop.user.name %></p>
+      <p>訪問した日：<%= shop.visitdate %></p>
+      <% if shop.shop_image.url.present? %>
+        <p class = "shop_image">
+        <strong>外観写真</strong></br>
+        <%= image_tag shop.shop_image.url %>
+        </p>
+      <% end %>
+      <% if shop.bread_image1.url.present? %>
+        <p class = "bread_image">
+        <strong>買ったパン1位:<%= shop.bread_name1 %></strong></br>
+        <%= image_tag shop.bread_image1.url %>
+        </p>
+      <% end %>
+      <% if shop.bread_image2.url.present? %>
+        <p class = "bread_image">
+        <strong>買ったパン2位:<%= shop.bread_name2 %></strong></br>
+        <%= image_tag shop.bread_image2.url %>
+        </p>
+      <% end %>
+      <% if shop.bread_image3.url.present? %>
+        <p class = "bread_image">
+        <strong>買ったパン3位:<%= shop.bread_name3 %></strong></br>
+        <%= image_tag shop.bread_image3.url %>
+        </p>
+      <% end %>
+      <div class="shop-links"> 
+        <% if shop.user_id == current_user.id %>
+          <%= link_to'詳細を確認する',shop_path(shop.id), class: "shop-links2" %>
+          <%= link_to "ブログ編集", edit_shop_path(shop.id), class: "shop-links2" %>
+          <%= link_to 'ブログ削除', shop_path(shop.id), class: "shop-links2", method: :delete,data: { confirm: '本当に削除してもいいですか？' } %>
+        <% else %>
+          <%= link_to'詳細を確認する',shop_path(shop.id), class: "shop-links2" %>
         <% end %>
-        <% if shop.bread_image1.url.present? %>
-            <p class = "bread_image">
-            <strong>買ったパン1位:<%= shop.bread_name1 %></strong></br>
-            <%= image_tag shop.bread_image1.url %>
-            </p>
-        <% end %>
-        <% if shop.bread_image2.url.present? %>
-            <p class = "bread_image">
-            <strong>買ったパン2位:<%= shop.bread_name2 %></strong></br>
-            <%= image_tag shop.bread_image2.url %>
-            </p>
-        <% end %>
-        <% if shop.bread_image3.url.present? %>
-            <p class = "bread_image">
-            <strong>買ったパン3位:<%= shop.bread_name3 %></strong></br>
-            <%= image_tag shop.bread_image3.url %>
-        <% end %>
-            </p>
-            <div class="shop-links"> 
-                <% if shop.user_id == current_user.id %>
-                    <%= link_to'詳細を確認する',shop_path(shop.id), class: "shop-links2" %>
-                    <%= link_to "ブログ編集", edit_shop_path(shop.id), class: "shop-links2" %>
-                    <%= link_to 'ブログ削除', shop_path(shop.id), class: "shop-links2", method: :delete,data: { confirm: '本当に削除してもいいですか？' } %>
-                <% else %>
-                    <%= link_to'詳細を確認する',shop_path(shop.id), class: "shop-links2" %>
-                <% end %>
-            </div>
-        </div>
-    <% end %>
+      </div>
     </div>
-    <div>
-        <%= paginate @shops %>
-    </div>
-    <div class="btn btn-xs">
-        <h2 id="btn"><%= link_to'新規作成',new_shop_path %></h2>
-    </div>
+  <% end %>
+</div>
+<div>
+  <%= paginate @shops %>
+</div>
+<div class="btn btn-xs">
+  <h2 id="btn"><%= link_to'新規作成',new_shop_path %></h2>
 </div>
