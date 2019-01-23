@@ -4,6 +4,13 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  def login_check
+    unless current_user
+      flash[:alert] = "ログインしてください"
+      redirect_to new_user_session_path
+    end
+  end
+
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :user_image])
     devise_parameter_sanitizer.permit(:account_update, keys: [:name, :user_image])

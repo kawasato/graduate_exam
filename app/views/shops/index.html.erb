@@ -19,7 +19,8 @@
       <h2>お店の名前：<%= shop.shop_name %></h2>
       <p>場所：<%= shop.address %></p>
       <p>投稿者：<%= shop.user.name %></p>
-      <p>訪問した日：<%= shop.visitdate %></p>
+      <p>訪問した日：<%= shop.visitdate.strftime('%Y年%m月%d日') %></p>
+      <p>投稿日：<%= shop.created_at.strftime('%Y年%m月%d日') %></p>
       <% if shop.shop_image.url.present? %>
         <p class = "shop_image">
         <strong>外観写真</strong></br>
@@ -47,8 +48,8 @@
       <div class="shop-links"> 
         <% if shop.user_id == current_user.id %>
           <%= link_to'詳細を確認する',shop_path(shop.id), class: "shop-links2" %>
-          <%= link_to "ブログ編集", edit_shop_path(shop.id), class: "shop-links2" %>
-          <%= link_to 'ブログ削除', shop_path(shop.id), class: "shop-links2", method: :delete,data: { confirm: '本当に削除してもいいですか？' } %>
+          <%= link_to "編集する", edit_shop_path(shop.id), class: "shop-links2" %>
+          <%= link_to '削除する', shop_path(shop.id), class: "shop-links2", method: :delete,data: { confirm: '本当に削除してもいいですか？' } %>
         <% else %>
           <%= link_to'詳細を確認する',shop_path(shop.id), class: "shop-links2" %>
         <% end %>

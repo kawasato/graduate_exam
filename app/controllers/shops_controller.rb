@@ -1,6 +1,9 @@
 class ShopsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy,:index]
+  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy, :index]
+  before_action :login_check, only: [:index, :show] #currentuserじゃなければログイン画面に遷移
+  before_action :ensure_correct_user, only: [:edit, :destroy] #useridが一致しなければ編集、削除できない
+  
   PER = 8
     
   def index
@@ -64,9 +67,16 @@ class ShopsController < ApplicationController
       :bread_image1, :bread_image1_cache, :bread_name2, :bread_image2, :bread_image2_cache, :bread_name3, :bread_image3,
       :bread_image3_cache)
   end
-
+  
   def set_blog
     @shop = Shop.find(params[:id])
   end 
 
+  def ensure_correct_user
+    @shop = Shop.find_by(id:params[:id])
+    if @shop.user_id != current_user.id
+      flash[:notice] = "権限がありません"
+      redirect_to shops_path
+    end
+  end
 end

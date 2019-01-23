@@ -12,9 +12,9 @@ ja:
         bread_name1: "パンの名前"
         bread_name2: "パンの名前"
         bread_name3: "パンの名前"
-        bread_image1: "パンの写真1"
-        bread_image2: "パンの写真2"
-        bread_image3: "パンの写真3"
+        bread_image1: "１位のパン"
+        bread_image2: "２位のパン"
+        bread_image3: "３位のパン"
       contact:
         name: "名前"
         email: "メールアドレス"

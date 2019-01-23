@@ -7,8 +7,9 @@ html{
 li{
     list-style: none;
     margin-top: 20px;
-    text-align: left;
+    text-align: center;
 }
+
 body{
     height: 100%;
  }
@@ -73,7 +74,8 @@ nav.pagination {
 }
 
 .sendbtn {
-    margin-bottom: 200px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 footer {
@@ -88,3 +90,7 @@ footer {
     bottom: 0;
 }
 
+td {
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
