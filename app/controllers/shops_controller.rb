@@ -20,8 +20,7 @@ class ShopsController < ApplicationController
   end
 
   def create
-    @shop = Shop.new(blog_params)
-    @shop.user_id = current_user.id
+    @shop = current_user.shops.build(blog_params)
     if @shop.save
       redirect_to shops_path,notice:" 新規投稿しました！"
     else
