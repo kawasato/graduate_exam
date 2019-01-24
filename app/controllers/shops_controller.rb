@@ -2,7 +2,7 @@ class ShopsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy, :index]
   before_action :login_check, only: [:index, :show] #currentuserじゃなければログイン画面に遷移
-  before_action :ensure_correct_user, only: [:edit, :destroy] #useridが一致しなければ編集、削除できない
+  #before_action :ensure_correct_user, only: [:edit, :destroy] #useridが一致しなければ編集、削除できない
   
   PER = 8
     
