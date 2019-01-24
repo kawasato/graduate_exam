@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :login_check, only: [:show]
-  before_action :user_mypage, only: [:edit]
+  before_action :user_mypage, only: [:show]
   
   def show
     @user = User.find(params[:id])
@@ -14,8 +14,7 @@ class UsersController < ApplicationController
   private
 
   def user_mypage
-    @user = User.find_by(id:params[:id])
-    if user_session!= current_user.id
+    if @current_user.id !=  params[:id].to_i
       flash[:notice] = "権限がありません"
       redirect_to shops_path
     end
