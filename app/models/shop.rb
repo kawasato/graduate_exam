@@ -3,6 +3,7 @@ class Shop < ApplicationRecord
   validates :address,presence: true
   validates :visitdate,presence: true
   validate :visitdate_validation
+  default_scope -> { order(created_at: :desc) }
 
   belongs_to :user
   has_many :favorites, dependent: :destroy
