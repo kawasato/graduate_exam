@@ -41,8 +41,7 @@ class ShopsController < ApplicationController
   end
 
   def confirm
-    @shop = Shop.new(blog_params)
-    @shop.user_id = current_user.id
+    @shop = current_user.shops.build(blog_params)
     render :new if @shop.invalid?
   end
 

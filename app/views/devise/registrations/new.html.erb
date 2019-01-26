@@ -6,6 +6,7 @@
   <div class="field-image">
     <%= f.label :user_image %><br />
     <%= f.file_field :user_image %>
+    <%= form.hidden_field :user_image_cache %>
   </div>
   <div class="field">
     <%= f.label :name %><br />
